@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:kurs_valute/data/model/model_money.dart';
 import 'package:kurs_valute/data/net_service/net_service.dart';
 import 'package:kurs_valute/ui/pages/home_page/home_page.dart';
@@ -24,14 +25,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
+    return /*MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => MoneyBloc(netWorkService: NetWorkService(Dio()))),
         BlocProvider(create: (context) => NextPageCubit(),),
         BlocProvider(create: (context) => HomePageCubit(),),
       ],
 
-      child: MaterialApp(
+      child:*/ GetMaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
 
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
               );
           }
         },
-      ),
+      // ),
     );
   }
 }
